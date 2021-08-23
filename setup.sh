@@ -11,8 +11,6 @@ red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ifconfig.me/ip);
-rm -f setup.sh
-sleep 5
 exit 0
 fi
 if [ -f "/etc/v2ray/domain" ]; then
