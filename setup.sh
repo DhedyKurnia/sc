@@ -24,7 +24,7 @@ apt-get -y install nano iptables dnsutils openvpn screen whois ngrep unzip unrar
 
 install screenfetch
 cd
-wget -O /usr/bin/screenfetch "https://raw.githubusercontent.com/Dimas1441/sc/main/screenfetch"
+wget -O /usr/bin/screenfetch "https://raw.githubusercontent.com/DhedyKurnia/sc/main/screenfetch"
 chmod +x /usr/bin/screenfetch,
 echo "clear" >> .profile
 echo "screenfetch" >> .profile
@@ -47,7 +47,7 @@ commonname=BRODY
 email=akses@mang-brody.me
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/Dimas1441/sc/main/password"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/DhedyKurnia/sc/main/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -109,7 +109,7 @@ apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rs
 
 # install neofetch
 cd
-wget -O /usr/bin/neofetch "https://raw.githubusercontent.com/Dimas1441/sc/main/neofetch"
+wget -O /usr/bin/neofetch "https://raw.githubusercontent.com/DhedyKurnia/sc/main/neofetch"
 chmod +x /usr/bin/neofetch
 echo "clear" >> .profile
 echo "neofetch" >> .profile
@@ -119,14 +119,14 @@ apt -y install nginx
 cd
 rm -rf /etc/nginx/sites-enabled/default
 rm -rf /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Dimas1441/sc/main/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/DhedyKurnia/sc/main/nginx.conf"
 mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Dimas1441/sc/main/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/DhedyKurnia/sc/main/vps.conf"
 /etc/init.d/nginx restart
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/Dimas1441/sc/main/badvpn-udpgw64"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/DhedyKurnia/sc/main/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -156,7 +156,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 # install squid
 cd
 apt -y install squid3
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/Dimas1441/sc/main/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/DhedyKurnia/sc/main/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # setting vnstat
@@ -216,12 +216,12 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 cd
 apt-get -y install sslh
 #configurasi sslh
-wget -O /etc/default/sslh "https://raw.githubusercontent.com/Dimas1441/sc/main/sslh-conf"
+wget -O /etc/default/sslh "https://raw.githubusercontent.com/DhedyKurnia/sc/main/sslh-conf"
 service sslh restart
 /etc/init.d/sslh restart
 
 #OpenVPN
-wget https://raw.githubusercontent.com/Dimas1441/sc/main/vpn.sh && chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/DhedyKurnia/sc/main/vpn.sh && chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
 apt -y install fail2ban
@@ -283,55 +283,55 @@ gem install lolcat
 #apt install -y libxml-parser-perl
 
 # banner /etc/issue.net
-wget -O /etc/issue.net "https://raw.githubusercontent.com/Dimas1441/sc/main/issue.net"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/DhedyKurnia/sc/main/issue.net"
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 # download script
 cd /usr/bin
-wget -O add-host "https://raw.githubusercontent.com/Dimas1441/sc/main/add-host.sh"
-wget -O about "https://raw.githubusercontent.com/Dimas1441/sc/main/about.sh"
-wget -O menu "https://raw.githubusercontent.com/Dimas1441/sc/main/menu.sh"
-wget -O usernew "https://raw.githubusercontent.com/Dimas1441/sc/main/usernew.sh"
-wget -O trial "https://raw.githubusercontent.com/Dimas1441/sc/main/trial.sh"
-wget -O hapus "https://raw.githubusercontent.com/Dimas1441/sc/main/hapus.sh"
-wget -O member "https://raw.githubusercontent.com/Dimas1441/sc/main/member.sh"
-wget -O delete "https://raw.githubusercontent.com/Dimas1441/sc/main/delete.sh"
-wget -O cek "https://raw.githubusercontent.com/Dimas1441/sc/main/cek.sh"
-wget -O restart "https://raw.githubusercontent.com/Dimas1441/sc/main/restart.sh"
-wget -O speedtest "https://raw.githubusercontent.com/Dimas1441/sc/main/speedtest_cli.py"
-wget -O info "https://raw.githubusercontent.com/Dimas1441/sc/main/info.sh"
-wget -O ram "https://raw.githubusercontent.com/Dimas1441/sc/main/ram.sh"
-wget -O renew "https://raw.githubusercontent.com/Dimas1441/sc/main/renew.sh"
-wget -O autokill "https://raw.githubusercontent.com/Dimas1441/sc/main/autokill.sh"
-wget -O ceklim "https://raw.githubusercontent.com/Dimas1441/sc/main/ceklim.sh"
-wget -O tendang "https://raw.githubusercontent.com/Dimas1441/sc/main/tendang.sh"
-wget -O clear-log "https://raw.githubusercontent.com/Dimas1441/sc/main/clear-log.sh"
-wget -O change-port "https://raw.githubusercontent.com/Dimas1441/sc/main/change.sh"
-wget -O port-ovpn "https://raw.githubusercontent.com/Dimas1441/sc/main/port-ovpn.sh"
-wget -O port-ssl "https://raw.githubusercontent.com/Dimas1441/sc/main/port-ssl.sh"
-wget -O port-wg "https://raw.githubusercontent.com/Dimas1441/sc/main/port-wg.sh"
-wget -O port-tr "https://raw.githubusercontent.com/Dimas1441/sc/main/port-tr.sh"
-wget -O port-sstp "https://raw.githubusercontent.com/Dimas1441/sc/main/port-sstp.sh"
-wget -O port-squid "https://raw.githubusercontent.com/Dimas1441/sc/main/port-squid.sh"
-wget -O port-ws "https://raw.githubusercontent.com/Dimas1441/sc/main/port-ws.sh"
-wget -O port-vless "https://raw.githubusercontent.com/Dimas1441/sc/main/port-vless.sh"
-wget -O wbmn "https://raw.githubusercontent.com/Dimas1441/sc/main/webmin.sh"
-wget -O xp "https://raw.githubusercontent.com/Dimas1441/sc/main/xp.sh"
-wget -O bannerku "https://raw.githubusercontent.com/Dimas1441/sc/main/menu-all/bannerku"
-wget -O bbr "https://raw.githubusercontent.com/Dimas1441/sc/main/menu-all/bbr.sh"
-wget -O menu "https://raw.githubusercontent.com/Dimas1441/sc/main/menu-all/menu.sh"
-wget -O trojaan "https://raw.githubusercontent.com/Dimas1441/sc/main/menu-all/trojaan.sh"
-wget -O vleess "https://raw.githubusercontent.com/Dimas1441/sc/main/menu-all/vleess.sh"
-wget -O wgr "https://raw.githubusercontent.com/Dimas1441/sc/main/menu-all/wgr.sh"
-wget -O l2tp "https://raw.githubusercontent.com/Dimas1441/sc/main/menu-all/l2tp.sh"
-wget -O v2raay "https://raw.githubusercontent.com/Dimas1441/sc/main/menu-all/v2raay.sh"
-wget -O ssh "https://raw.githubusercontent.com/Dimas1441/sc/main/menu-all/ssh.sh"
-wget -O sstpp "https://raw.githubusercontent.com/Dimas1441/sc/main/menu-all/sstpp.sh"
-wget -O ssssr "https://raw.githubusercontent.com/Dimas1441/sc/main/menu-all/ssssr.sh"
-wget -O backup "https://raw.githubusercontent.com/Dimas1441/sc/main/backup.sh"
-wget -O autobackup "https://raw.githubusercontent.com/Dimas1441/sc/main/autobackup.sh"
-wget -O rclone "https://raw.githubusercontent.com/Dimas1441/sc/main/rclone.conf"
+wget -O add-host "https://raw.githubusercontent.com/DhedyKurnia/sc/main/add-host.sh"
+wget -O about "https://raw.githubusercontent.com/DhedyKurnia/sc/main/about.sh"
+wget -O menu "https://raw.githubusercontent.com/DhedyKurnia/sc/main/menu.sh"
+wget -O usernew "https://raw.githubusercontent.com/DhedyKurnia/sc/main/usernew.sh"
+wget -O trial "https://raw.githubusercontent.com/DhedyKurnia/sc/main/trial.sh"
+wget -O hapus "https://raw.githubusercontent.com/DhedyKurnia/sc/main/hapus.sh"
+wget -O member "https://raw.githubusercontent.com/DhedyKurnia/sc/main/member.sh"
+wget -O delete "https://raw.githubusercontent.com/DhedyKurnia/sc/main/delete.sh"
+wget -O cek "https://raw.githubusercontent.com/DhedyKurnia/sc/main/cek.sh"
+wget -O restart "https://raw.githubusercontent.com/DhedyKurnia/sc/main/restart.sh"
+wget -O speedtest "https://raw.githubusercontent.com/DhedyKurnia/sc/main/speedtest_cli.py"
+wget -O info "https://raw.githubusercontent.com/DhedyKurnia/sc/main/info.sh"
+wget -O ram "https://raw.githubusercontent.com/DhedyKurnia/sc/main/ram.sh"
+wget -O renew "https://raw.githubusercontent.com/DhedyKurnia/sc/main/renew.sh"
+wget -O autokill "https://raw.githubusercontent.com/DhedyKurnia/sc/main/autokill.sh"
+wget -O ceklim "https://raw.githubusercontent.com/DhedyKurnia/sc/main/ceklim.sh"
+wget -O tendang "https://raw.githubusercontent.com/DhedyKurnia/sc/main/tendang.sh"
+wget -O clear-log "https://raw.githubusercontent.com/DhedyKurnia/sc/main/clear-log.sh"
+wget -O change-port "https://raw.githubusercontent.com/DhedyKurnia/sc/main/change.sh"
+wget -O port-ovpn "https://raw.githubusercontent.com/DhedyKurnia/sc/main/port-ovpn.sh"
+wget -O port-ssl "https://raw.githubusercontent.com/DhedyKurnia/sc/main/port-ssl.sh"
+wget -O port-wg "https://raw.githubusercontent.com/DhedyKurnia/sc/main/port-wg.sh"
+wget -O port-tr "https://raw.githubusercontent.com/DhedyKurnia/sc/main/port-tr.sh"
+wget -O port-sstp "https://raw.githubusercontent.com/DhedyKurnia/sc/main/port-sstp.sh"
+wget -O port-squid "https://raw.githubusercontent.com/DhedyKurnia/sc/main/port-squid.sh"
+wget -O port-ws "https://raw.githubusercontent.com/DhedyKurnia/sc/main/port-ws.sh"
+wget -O port-vless "https://raw.githubusercontent.com/DhedyKurnia/sc/main/port-vless.sh"
+wget -O wbmn "https://raw.githubusercontent.com/DhedyKurnia/sc/main/webmin.sh"
+wget -O xp "https://raw.githubusercontent.com/DhedyKurnia/sc/main/xp.sh"
+wget -O bannerku "https://raw.githubusercontent.com/DhedyKurnia/sc/main/menu-all/bannerku"
+wget -O bbr "https://raw.githubusercontent.com/DhedyKurnia/sc/main/menu-all/bbr.sh"
+wget -O menu "https://raw.githubusercontent.com/DhedyKurnia/sc/main/menu-all/menu.sh"
+wget -O trojaan "https://raw.githubusercontent.com/DhedyKurnia/sc/main/menu-all/trojaan.sh"
+wget -O vleess "https://raw.githubusercontent.com/DhedyKurnia/sc/main/menu-all/vleess.sh"
+wget -O wgr "https://raw.githubusercontent.com/DhedyKurnia/sc/main/menu-all/wgr.sh"
+wget -O l2tp "https://raw.githubusercontent.com/DhedyKurnia/sc/main/menu-all/l2tp.sh"
+wget -O v2raay "https://raw.githubusercontent.com/DhedyKurnia/sc/main/menu-all/v2raay.sh"
+wget -O ssh "https://raw.githubusercontent.com/DhedyKurnia/sc/main/menu-all/ssh.sh"
+wget -O sstpp "https://raw.githubusercontent.com/DhedyKurnia/sc/main/menu-all/sstpp.sh"
+wget -O ssssr "https://raw.githubusercontent.com/DhedyKurnia/sc/main/menu-all/ssssr.sh"
+wget -O backup "https://raw.githubusercontent.com/DhedyKurnia/sc/main/backup.sh"
+wget -O autobackup "https://raw.githubusercontent.com/DhedyKurnia/sc/main/autobackup.sh"
+wget -O rclone "https://raw.githubusercontent.com/DhedyKurnia/sc/main/rclone.conf"
 chmod +x add-host
 chmod +x script-info
 chmod +x menu
@@ -420,23 +420,23 @@ clear
 
 mkdir /var/lib/premium-script;
 echo "IP=" >> /var/lib/premium-script/ipvps.conf
-wget https://raw.githubusercontent.com/Dimas1441/sc/main/cf.sh && chmod +x cf.sh && ./cf.sh
+wget https://raw.githubusercontent.com/DhedyKurnia/sc/main/cf.sh && chmod +x cf.sh && ./cf.sh
 #install sstp
-wget https://raw.githubusercontent.com/Dimas1441/sc/main/sstp.sh && chmod +x sstp.sh && ./sstp.sh
+wget https://raw.githubusercontent.com/DhedyKurnia/sc/main/sstp.sh && chmod +x sstp.sh && ./sstp.sh
 #install ssr
-wget https://raw.githubusercontent.com/Dimas1441/sc/main/ssr.sh && chmod +x ssr.sh && ./ssr.sh
-wget https://raw.githubusercontent.com/Dimas1441/sc/main/sodosok.sh && chmod +x sodosok.sh && ./sodosok.sh
+wget https://raw.githubusercontent.com/DhedyKurnia/sc/main/ssr.sh && chmod +x ssr.sh && ./ssr.sh
+wget https://raw.githubusercontent.com/DhedyKurnia/sc/main/sodosok.sh && chmod +x sodosok.sh && ./sodosok.sh
 #installwg
-wget https://raw.githubusercontent.com/Dimas1441/sc/main/wg.sh && chmod +x wg.sh && ./wg.sh
+wget https://raw.githubusercontent.com/DhedyKurnia/sc/main/wg.sh && chmod +x wg.sh && ./wg.sh
 #install v2ray
-wget https://raw.githubusercontent.com/Dimas1441/sc/main/ins-vt.sh && chmod +x ins-vt.sh && ./ins-vt.sh
+wget https://raw.githubusercontent.com/DhedyKurnia/sc/main/ins-vt.sh && chmod +x ins-vt.sh && ./ins-vt.sh
 #install L2TP
-wget https://raw.githubusercontent.com/Dimas1441/sc/main/ipsec.sh && chmod +x ipsec.sh && ./ipsec.sh
-wget https://raw.githubusercontent.com/Dimas1441/sc/main/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+wget https://raw.githubusercontent.com/DhedyKurnia/sc/main/ipsec.sh && chmod +x ipsec.sh && ./ipsec.sh
+wget https://raw.githubusercontent.com/DhedyKurnia/sc/main/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 #install WEBSOCKET
-wget https://raw.githubusercontent.com/Dimas1441/sc/main/edu.sh && chmod +x edu.sh && ./edu.sh
-#wget https://raw.githubusercontent.com/Dimas1441/sc/main/websocket.sh && chmod +x websocket.sh && ./websocket.sh
-wget https://raw.githubusercontent.com/Dimas1441/sc/main/websocket-python/websocket.sh && chmod +x websocket.sh && ./websocket.sh
+wget https://raw.githubusercontent.com/DhedyKurnia/sc/main/edu.sh && chmod +x edu.sh && ./edu.sh
+#wget https://raw.githubusercontent.com/DhedyKurnia/sc/main/websocket.sh && chmod +x websocket.sh && ./websocket.sh
+wget https://raw.githubusercontent.com/DhedyKurnia/sc/main/websocket-python/websocket.sh && chmod +x websocket.sh && ./websocket.sh
 rm -f /root/ssh-vpn.sh
 rm -f /root/sstp.sh
 rm -f /root/wg.sh
@@ -462,7 +462,7 @@ WantedBy=multi-user.target
 EOF
 systemctl daemon-reload
 systemctl enable autosett
-wget -O /etc/set.sh "https://raw.githubusercontent.com/Dimas1441/sc/main/set.sh"
+wget -O /etc/set.sh "https://raw.githubusercontent.com/DhedyKurnia/sc/main/set.sh"
 chmod +x /etc/set.sh
 history -c
 echo "1.2" > /home/ver
